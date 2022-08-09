@@ -27,6 +27,12 @@ public class WorkerServiceImpl implements WorkerService {
         this.modelMapper = modelMapper;
     }
 
+    /**
+     * created worker
+     *
+     * @param workerDto
+     * @return
+     */
 
     @Override
     @Transactional
@@ -44,6 +50,12 @@ public class WorkerServiceImpl implements WorkerService {
 
     }
 
+    /**
+     * delete worker
+     *
+     * @param id
+     * @return
+     */
     @Override
     @Transactional
     public void delete(Long id) {
@@ -61,11 +73,21 @@ public class WorkerServiceImpl implements WorkerService {
     }
 
 
+    /**
+     * created worker
+     * @return
+     */
     @Override
     public List<Worker> list() {
         return workerRepository.findAll();
     }
 
+    /**
+     * search worker
+     *
+     * @param query
+     * @return
+     */
     @Override
     public List<Worker> searchWorkers(String query) {
         List<Worker> workers = workerRepository.searchWorker(query);
@@ -73,6 +95,13 @@ public class WorkerServiceImpl implements WorkerService {
     }
 
 
+    /**
+     * update worker
+     *
+     * @param id
+     * @param workerDto
+     * @return
+     */
     @Override
     @Transactional
     public WorkerDto update(Long id, WorkerDto workerDto) {
