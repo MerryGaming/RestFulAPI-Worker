@@ -9,7 +9,7 @@ import java.time.Instant;
 @AllArgsConstructor
 @Getter
 @Setter
-public class ExceptionReponse {
+public class ExceptionResponse {
     private String error;
     private String message;
     private Instant timeStamp;

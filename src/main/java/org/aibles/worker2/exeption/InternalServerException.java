@@ -1,9 +1,9 @@
 package org.aibles.worker2.exeption;
 
-public class ServerInternalException extends RuntimeException {
+public class InternalServerException extends RuntimeException {
     private final String message;
 
-    public ServerInternalException(String message) {
+    public InternalServerException(String message) {
         super();
         this.message = message;
     }
