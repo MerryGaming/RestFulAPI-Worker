@@ -1,7 +1,7 @@
 package org.aibles.worker2.exeption.handle;
 
 import lombok.extern.slf4j.Slf4j;
-import org.aibles.worker2.exeption.response.ExceptionResponse;
+import org.aibles.worker2.exeption.response.ExceptionReponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -16,12 +16,12 @@ import java.time.Instant;
 @Slf4j
 public class ResourceNoFoundExceptionHandle {
     @ExceptionHandler(BadLocationException.class)
-    public ExceptionResponse resourceNoFoundExceptionHandle(ResolutionException error) {
+    public ExceptionReponse resourceNoFoundExceptionHandle(ResolutionException error) {
         log.info("Exception: error:{}, message: {}",HttpStatus.BAD_REQUEST.value(), error.getMessage());
-        ExceptionResponse exceptionResponse = new ExceptionResponse();
-        exceptionResponse.setError("Hollow!!");
-        exceptionResponse.setMessage(error.getMessage());
-        exceptionResponse.setTimeStamp(Instant.now());
-        return exceptionResponse;
+        ExceptionReponse exceptionReponse = new ExceptionReponse();
+        exceptionReponse.setError("Hollow!!");
+        exceptionReponse.setMessage(error.getMessage());
+        exceptionReponse.setTimeStamp(Instant.now());
+        return exceptionReponse;
     }
 }

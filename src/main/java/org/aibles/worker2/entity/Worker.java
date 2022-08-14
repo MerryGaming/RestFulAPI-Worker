@@ -1,5 +1,6 @@
 package org.aibles.worker2.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,14 +9,13 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-@Getter
-@Setter
+@Data// dùng cái này thì k cần viết constructor với hashcode and equals ,toString nx
 @Table(name = "worker")
 public class Worker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id")
-    private Long id;
+    private int id;
 
     @Column (name="name")
     private String name;
@@ -34,19 +34,7 @@ public class Worker {
     @Column (name="allowance")
     private double allowance;
 
-    public Worker() {
-    }
 
-    public Worker(long id, String name, int date, int years_of_work,
-                  String address, double wage, double allowance) {
-        this.id = id;
-        this.name = name;
-        this.date = date;
-        this.years_of_work = years_of_work;
-        this.address = address;
-        this.wage = wage;
-        this.allowance = allowance;
-    }
 
     @Override
     public boolean equals(Object o) {
